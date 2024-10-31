@@ -1,0 +1,190 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+    @apply h-full;
+}
+
+#root {
+    @apply flex flex-col min-h-full;
+}
+
+h2 {
+  @apply text-2xl font-bold;
+}
+
+h3 {
+    @apply text-base font-semibold my-0;
+}
+
+p {
+    @apply text-base;
+}
+
+.container {
+    @apply mx-auto px-2;
+    max-width: 1300px;
+}
+
+.grid-container {
+    @apply grid grid-rows-2 grid-cols-2 container gap-7 py-4;
+    grid-template-rows: 1fr 1fr;
+    transition: grid-template-rows 0.25s;
+    min-height: 90%;
+}
+
+.full-w-component {
+    @apply rounded-lg col-span-2 p-4 bg-primary flex flex-col items-center bg-base-200 min-h-full;
+}
+
+.home-component {
+    @apply rounded-lg col-span-2 p-4 bg-primary items-center bg-base-200 min-h-full;
+}
+
+.half-w-component {
+    @apply col-span-1;
+}
+
+.to-do-component {
+    @apply gap-2 justify-start h-fit;
+}
+
+.task-item {
+    @apply flex bg-base-100 items-center gap-3 w-full py-1 px-3 rounded-lg justify-start;
+}
+
+.task-item-1 {
+    @apply basis-9/12;
+    max-width: 60%;
+    margin-right: auto;
+}
+
+.to-do-btn {
+    @apply flex gap-1;
+}
+
+.item-form {
+    @apply flex flex-col gap-4;
+}
+
+.form-btn {
+    @apply flex justify-end gap-3;
+}
+
+.span-2 { 
+    grid-template-rows: 2fr 0fr;
+}
+
+.icon-btn {
+    @apply btn btn-circle btn-ghost
+}
+
+.x-flex {
+    @apply flex justify-between gap-4 items-center;
+}
+
+/*scroll bar*/
+/* width */
+::-webkit-scrollbar {
+   @apply w-2 ;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    @apply bg-transparent;
+}
+  
+/* Handle */
+::-webkit-scrollbar-thumb {
+    @apply bg-neutral m-12 rounded;
+}
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-neutral-focus;
+}
+
+
+.custom-tooltip .custom-tooltip-content {
+    visibility: hidden;
+    min-width: 150px;
+    width: fit-content;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 25%;
+    left: 100%;
+    margin-left: 20px;
+    opacity: 0;
+    transition: opacity 0.3s; 
+}
+  
+.custom-tooltip:hover .custom-tooltip-content {
+    visibility: visible;
+    opacity: 1;
+}
+
+.progress-data {
+    min-height: 500px;
+}
+
+.progress-bar {
+    @apply  mx-auto fill-current bg-primary border-2 w-10 rounded-md p-3 transition-all duration-200 ease-in-out hover:bg-current custom-tooltip;
+}
+
+.graph-div {
+    width: 70%;
+    aspect-ratio: 2/1;
+}
+
+.max-container {
+    @apply w-full overflow-auto;
+    height: fit-content;
+    max-height: 500px;
+}
+
+.text-mode-selected {
+    @apply text-gray-400;
+}
+
+[data-theme="night"] .text-mode-selected {
+    @apply text-gray-700;
+  }
+
+/* .todo, .chatbot {
+    @apply hidden sm:block;
+} */
+
+@media (max-width: 639px){
+ .pomodoro{
+    min-height: 80%;
+    grid-template-rows: 2fr 0fr;
+ }
+ .progress-chart, .tasks, .home-component{
+    min-height: 100%;
+    max-height: 100%;
+ }
+}
+
+
+/* .footer-nav {
+    @apply bg-base-200;
+} */
+
+@media (max-height: 769px){
+    .countdown{
+        @apply text-6xl;
+    }
+}
+
+@media (min-height: 770px){
+    .countdown {
+        @apply text-8xl;
+    }    
+}
+
